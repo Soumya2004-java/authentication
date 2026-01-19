@@ -68,6 +68,7 @@ class _RegisterPageState extends State<RegisterPage> {
       _showSuccessDialog();
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context);
+
       setState(() => isLoading = false);
 
       if (e.code == 'email-already-in-use') {
